@@ -99,3 +99,7 @@ where map.txt looks like:
 ```
  avatars image1.png|image2.gif|image3.jpg...
 ```
+which can be generated using following commoand:
+```
+cd /var/www/html/avatars/ && ls -al *.* | awk '{print $9}' | tr '\n' '|' | sed 's/^/avatars /' | sed 's/.$//' > map.txt 
+```
