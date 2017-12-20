@@ -90,3 +90,11 @@ where 5char long short_url is generated as php function using digits from jwt:
     }
 }
 ```
+Another example as avatar service
+```RewriteEngine On
+ RewriteMap servers "rnd:/var/www/html/avatars/map.txt"
+ RewriteRule "^/avatars/(.*\.(png|gif|jpg))" "/avatars/${servers:avatars}" 
+```
+where map.txt looks like:
+`avatars image1.png|image2.gif|image3.jpg...
+```
