@@ -96,5 +96,6 @@ Another example as avatar service
  RewriteRule "^/avatars/(.*\.(png|gif|jpg))" "/avatars/${servers:avatars}" 
 ```
 where map.txt looks like:
-```avatars image1.png|image2.gif|image3.jpg...
+```
+ avatars image1.png|image2.gif|image3.jpg...
 ```
