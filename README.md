@@ -38,9 +38,9 @@ while (1) {
 Another example where short url (just REQUEST_URI, not HOST_NAME) is generated in db:
 ```RewriteEngine On
  DBDriver mysql  
- DBDParams "host=localhost,user=homestead,pass=0za8ATeUNvmZfgDx,dbname=homestead"
+ DBDParams "host=localhost,user=somedbuser,pass=xxxxxxx,dbname=somedbname"
  RewriteCond %{REQUEST_URI} ^/(.+)$
- RewriteMap long_url "dbd:SELECT CONCAT('https://jitsi-prod01.carnet.hr/', name, '?jwt=', jwt) FROM reservations where short_url = %s"
+ RewriteMap long_url "dbd:SELECT CONCAT('https://server.tld/', name, '?jwt=', jwt) FROM reservations where short_url = %s"
  RewriteCond ${long_url:%1} ^(.+)$
  RewriteRule (.*) %1 
 ```
